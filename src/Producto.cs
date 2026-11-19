@@ -43,6 +43,10 @@ public class Producto
         Console.WriteLine($"Código: {Codigo}");
         Console.WriteLine($"Nombre: {Nombre}");
         Console.WriteLine($"Precio: {Precio:F2}");
+
         Console.WriteLine("Producto disponible");
+
+        Console.WriteLine("Producto registrado");
+
     }
 }

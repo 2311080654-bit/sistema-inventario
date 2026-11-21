@@ -33,7 +33,7 @@ public class Producto
         }
 
         Codigo = codigo;
-        Nombre = nombre;
+        Nombre = nombre
         Precio = precio;
         Existencia = existencia;
     }

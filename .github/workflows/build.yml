@@ -1,0 +1,26 @@
+name: Build .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar SDK de .NET 8.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias NuGet
+        run: dotnet restore tests/ProductoTests.csproj
+
+      - name: Compilar el proyecto
+        run: dotnet build tests/ProductoTests.csproj --configuration Release --no-restore

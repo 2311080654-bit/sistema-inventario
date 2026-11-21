@@ -1,0 +1,23 @@
+name: Pruebas .NET
+
+on:
+  push:
+    branches: [ "main", "test/pruebas-producto" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Ejecutar pruebas
+        run: dotnet test tests/ProductoTests.csproj --verbosity normal

@@ -38,15 +38,13 @@ public class Producto
         Existencia = existencia;
     }
 
-    public void MostrarInformacion()
-    {
-        Console.WriteLine($"Código: {Codigo}");
-        Console.WriteLine($"Nombre: {Nombre}");
-        Console.WriteLine($"Precio: {Precio:F2}");
-
-        Console.WriteLine("Producto disponible");
-
-        Console.WriteLine("Producto registrado");
-
-    }
+   public void MostrarInformacion()
+{
+    Console.WriteLine($"Código: {Codigo}");
+    Console.WriteLine($"Nombre: {Nombre}");
+    Console.WriteLine($"Precio: {Precio:F2}");
+    Console.WriteLine($"Existencia: {Existencia}");
+    Console.WriteLine("Producto disponible");
+    Console.WriteLine("Producto registrado");
+}
 }
